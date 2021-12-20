@@ -3,12 +3,17 @@ import './App.css';
 
 class App extends Component {
   getStuff() {
+    return(
+      <div>Hi</div>
+    );
   }
 
   getMorningGreeting() {
+    return <div>Good Morning</div>
   }
 
   getEveningGreeting() {
+    return <div>Good Evening</div>
   }
 
   showCompany(name, revenue) {
@@ -19,6 +24,8 @@ class App extends Component {
   }
 
   render() {
+
+    let date = new Date().getHours()
 
     let companies = [
       { name: "Tesla", revenue: 140 },
@@ -32,6 +39,7 @@ class App extends Component {
           <h4 className='ex-title'>Spot-check 1</h4 >
           <div className="exercise" id="spotcheck-1">
             {/* your code here */}
+            <h1>Stuff: {this.getStuff()}</h1>
           </div>
         </div>
 
@@ -39,6 +47,7 @@ class App extends Component {
           <h4 className='ex-title'>Spot-check 2</h4>
           <div className="exercise" id="spotcheck-2">
             {/* your code here */}
+            {date > 12 ? this.getEveningGreeting() : this.getMorningGreeting()}
           </div>
         </div>
 
@@ -46,6 +55,11 @@ class App extends Component {
           <h4 className='ex-title'>Spot-check 3</h4>
           <div className="exercise" id="spotcheck-3">
             {/* your code here */}
+            {[
+              this.getMorningGreeting(),
+              this.getEveningGreeting(),
+              <p>some text</p>
+            ]}
           </div>
         </div>
 
